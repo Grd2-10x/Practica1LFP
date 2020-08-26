@@ -4,6 +4,8 @@ from cargar import cargar
 from suma import sumas
 from maximo import maximo
 from minimo import minimo
+from seleccionar import seleccionar
+from reportar import reporte
 
 
 def entrada():
@@ -41,6 +43,9 @@ def entrada():
         print("No hay archivos cargados")
         entrada()
 
+    elif comando == "salir":
+        print("Hasta la proxima")
+
     else:
         print("Comando invalido")
         entrada()
@@ -49,8 +54,8 @@ def entrada():
 def menu(union):
     if len(union) != 0:
         cadena = input("Introducir Comando: ")
-        cadena1 = re.split('[ ,]', cadena.lower())
-        comando = cadena1[0]
+        cadena1 = re.split('[ ,"]', cadena)
+        comando = cadena1[0].lower()
 
         if comando == "cargar":
             print("-------------------------------------------")
@@ -60,7 +65,7 @@ def menu(union):
 
         elif comando == "seleccionar":
             print("-------------------------------------------")
-            print("Comando seleccionar")
+            seleccionar(union, cadena1)
             print("-------------------------------------------")
             menu(union)
 
@@ -94,9 +99,12 @@ def menu(union):
 
         elif comando == "reportar":
             print("-------------------------------------------")
-            print("Comando reportar")
+            reporte(union, cadena1)
             print("-------------------------------------------")
             menu(union)
+
+        elif comando == "salir":
+            print("Hasta la proxima")
 
         else:
             print("Comando invalido")
@@ -106,4 +114,16 @@ def menu(union):
         entrada()
 
 
+print("-------------------------------------------")
+print("              ---Comandos---               ")
+print("1) cargar")
+print("2) seleccionar")
+print("3) maximo")
+print("4) minimo")
+print("5) suma")
+print("6) cuenta")
+print("7) reportar")
+print("8) salir")
+print("-------------------------------------------")
+print("")
 entrada()

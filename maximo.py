@@ -1,14 +1,15 @@
 def maximo(archivos, cadena):
     mayor = [0]*len(archivos)
     contador = 0
-    if cadena[1] == "edad":
+    comando = cadena[1].lower()
+    if comando == "edad":
         print("Maximo edad")
         for archivo in archivos:
             mayor[contador] = archivo.get('edad')
             contador += 1
         mayor = max(mayor, key=int)
         return mayor
-    elif cadena[1] == "promedio":
+    elif comando == "promedio":
         print("Maximo Promedio")
         for archivo in archivos:
             mayor[contador] = archivo.get('promedio')
