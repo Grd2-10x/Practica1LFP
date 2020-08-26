@@ -1,3 +1,6 @@
+import webbrowser
+
+
 def reporte(union, cadena2):
     cadena = [0] * len(cadena2)
     contador = 0
@@ -7,7 +10,7 @@ def reporte(union, cadena2):
         cadena[contador] = palabra.lower()
         contador += 1
     cant = cadena[1]
-    contador=0
+    contador = 0
 
     if tam == 2 and int(cant) <= cant2 and cadena[0] == "reportar":
         with open('reporte.html', 'w') as miarchivo:
@@ -29,7 +32,8 @@ def reporte(union, cadena2):
 
             for archivo in union:
                 if contador != int(cant):
-                    miarchivo.write("   <h3>" +str(contador+1)+") "+ "Nombre: " + archivo.get('nombre') + "</h3>" + "\n")
+                    miarchivo.write(
+                        "   <h3>" + str(contador + 1) + ") " + "Nombre: " + archivo.get('nombre') + "</h3>" + "\n")
                     miarchivo.write("   <h4>" + "Edad: " + str(archivo.get('edad')) + "</h4>" + "\n")
                     miarchivo.write("   <h4>" + "Activo: " + str(archivo.get('activo')) + "</h4>" + "\n")
                     miarchivo.write("   <h4>" + "Promedio: " + str(archivo.get('promedio')) + "</h4>" + "\n")
@@ -39,5 +43,7 @@ def reporte(union, cadena2):
             miarchivo.write('</html>')
             miarchivo.close()
             print("Reporte Creado")
+            webbrowser.open("reporte.html")
+
     else:
         print("Comando Invalido")
