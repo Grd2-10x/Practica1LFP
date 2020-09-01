@@ -1,5 +1,8 @@
 from tercero import tercero
 from cuarto import cuarto
+from quinto import donde2
+from sexto import donde3
+from septimo import donde4
 
 
 def seleccionar(union, cadena2):
@@ -13,12 +16,18 @@ def seleccionar(union, cadena2):
 
     if tam == 2:
         primero(union, cadena)
-    elif tam == 3:
-        segundo(union, cadena)
     elif tam == 4:
+        segundo(union, cadena)
+    elif tam == 6:
         tercero(union, cadena)
-    elif tam == 5:
+    elif tam == 8:
         cuarto(union, cadena)
+    elif tam == 10:
+        donde2(union, cadena)
+    elif tam == 12:
+        donde3(union, cadena)
+    elif tam == 14:
+        donde4(union, cadena)
     else:
         print("Comando Invalido")
 
@@ -53,17 +62,17 @@ def primero(union, cadena):
 
 def segundo(union, cadena):
     if cadena[1] == "nombre":
-        if cadena[2] == "edad":
+        if cadena[3] == "edad":
             for archivo in union:
                 print(archivo.get('nombre'))
                 print(archivo.get('edad'))
                 print("")
-        elif cadena[2] == "promedio":
+        elif cadena[3] == "promedio":
             for archivo in union:
                 print(archivo.get('nombre'))
                 print(archivo.get('promedio'))
                 print("")
-        elif cadena[2] == "activo":
+        elif cadena[3] == "activo":
             for archivo in union:
                 print(archivo.get('nombre'))
                 print(archivo.get('activo'))
@@ -72,17 +81,17 @@ def segundo(union, cadena):
             print("Comando Invalido")
 
     elif cadena[1] == "edad":
-        if cadena[2] == "nombre":
+        if cadena[3] == "nombre":
             for archivo in union:
                 print(archivo.get('nombre'))
                 print(archivo.get('edad'))
                 print("")
-        elif cadena[2] == "promedio":
+        elif cadena[3] == "promedio":
             for archivo in union:
                 print(archivo.get('edad'))
                 print(archivo.get('promedio'))
                 print("")
-        elif cadena[2] == "activo":
+        elif cadena[3] == "activo":
             for archivo in union:
                 print(archivo.get('edad'))
                 print(archivo.get('activo'))
@@ -91,17 +100,17 @@ def segundo(union, cadena):
             print("Comando Invalido")
 
     elif cadena[1] == "promedio":
-        if cadena[2] == "edad":
+        if cadena[3] == "edad":
             for archivo in union:
                 print(archivo.get('edad'))
                 print(archivo.get('promedio'))
                 print("")
-        elif cadena[2] == "nombre":
+        elif cadena[3] == "nombre":
             for archivo in union:
                 print(archivo.get('nombre'))
                 print(archivo.get('promedio'))
                 print("")
-        elif cadena[2] == "activo":
+        elif cadena[3] == "activo":
             for archivo in union:
                 print(archivo.get('activo'))
                 print(archivo.get('promedio'))
@@ -110,18 +119,17 @@ def segundo(union, cadena):
             print("Comando Invalido")
 
     elif cadena[1] == "activo":
-        print(cadena[1])
-        if cadena[2] == "edad":
+        if cadena[3] == "edad":
             for archivo in union:
                 print(archivo.get('edad'))
                 print(archivo.get('activo'))
                 print("")
-        elif cadena[2] == "promedio":
+        elif cadena[3] == "promedio":
             for archivo in union:
                 print(archivo.get('activo'))
                 print(archivo.get('promedio'))
                 print("")
-        elif cadena[2] == "nombre":
+        elif cadena[3] == "nombre":
             for archivo in union:
                 print(archivo.get('nombre'))
                 print(archivo.get('activo'))
